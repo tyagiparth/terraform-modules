@@ -11,5 +11,5 @@ resource "azurerm_subnet" "subnets" {
   name                 = each.value.name
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefix       = each.value.address_prefix
+  address_prefixes     = [each.value.address_prefix]
 }
